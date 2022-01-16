@@ -40,7 +40,7 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Bhargav Mantha](https://bhargavmantha.com)
+- Author - [Bhargav Mantha](https://bhargavmantha.dev)
 
 ## License
 
