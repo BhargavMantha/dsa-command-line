@@ -4,7 +4,7 @@
 
 ## Description
 
-[DSA-CommandLine APP](https://github.com/BhargavMantha/dsa) DSA commandLine APP.
+[DSA-CommandLine APP](https://github.com/BhargavMantha/dsa-commandline-app) DSA commandLine APP.
 
 ## Installation
 
