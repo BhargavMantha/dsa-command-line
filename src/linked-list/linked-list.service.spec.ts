@@ -45,4 +45,16 @@ describe('Must Return the right node value for Singly Linked List', () => {
   expect(singlyLinkedList.head.value).toBe(1);
   expect(singlyLinkedList.tail.value).toBe(3);
   expect(singlyLinkedList.length).toBe(3);
+  singlyLinkedList.pop();
+  expect(singlyLinkedList.head.value).toBe(1);
+  expect(singlyLinkedList.tail.value).toBe(2);
+  expect(singlyLinkedList.length).toBe(2);
+  singlyLinkedList.pop();
+  expect(singlyLinkedList.head.value).toBe(1);
+  expect(singlyLinkedList.tail.value).toBe(1);
+  expect(singlyLinkedList.length).toBe(1);
+  singlyLinkedList.pop();
+  expect(singlyLinkedList.head).toBe(null);
+  expect(singlyLinkedList.tail).toBe(null);
+  expect(singlyLinkedList.length).toBe(0);
 });
