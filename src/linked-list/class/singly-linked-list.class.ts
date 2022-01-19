@@ -20,4 +20,18 @@ export class SinglyLinkedList {
     this.length += 1;
     return this;
   }
+  pop() {
+    let secondLastElement: Node = this.head;
+    for (let i = 1; i < this.length - 1; i++) {
+      secondLastElement = secondLastElement.next;
+    }
+    this.length -= 1;
+    if (this.length === 0) {
+      this.head = null;
+      secondLastElement = null;
+    }
+    this.tail = secondLastElement;
+    this.tail.next = null;
+    return this;
+  }
 }
