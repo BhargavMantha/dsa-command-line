@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { IsNumberPrimeModule } from './is-number-prime/is-number-prime.module';
 import { MainMenuModule } from './main-menu/main-menu.module';
 import { LinkedListModule } from './linked-list/linked-list.module';
+import { ArraysModule } from './arrays/arrays.module';
 
 @Module({
-  imports: [IsNumberPrimeModule, MainMenuModule, LinkedListModule],
+  imports: [IsNumberPrimeModule, MainMenuModule, LinkedListModule, ArraysModule],
   controllers: [AppController],
   providers: [AppService],
 })
