@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MainMenuService } from './main-menu.service';
 const inputData = 'Hello Bhargav';
-const keys = {
+export const keys = {
   up: '\x1B\x5B\x41',
   down: '\x1B\x5B\x42',
   enter: '\x0D',
