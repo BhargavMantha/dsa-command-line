@@ -21,17 +21,20 @@ export class SinglyLinkedList {
     return this;
   }
   pop() {
-    let secondLastElement: Node = this.head;
-    for (let i = 1; i < this.length - 1; i++) {
-      secondLastElement = secondLastElement.next;
+    if (!this.head) return undefined;
+    let current: Node = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
     }
     this.length -= 1;
+    this.tail = newTail;
+    this.tail.next = null;
     if (this.length === 0) {
       this.head = null;
-      secondLastElement = null;
+      this.tail = null;
     }
-    this.tail = secondLastElement;
-    this.tail.next = null;
     return this;
   }
 }
