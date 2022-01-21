@@ -115,7 +115,6 @@ describe('test, curious-case-of-benjamin-bulbs', () => {
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-1.txt',
       'utf8'
     );
-    console.log(patternOutput);
     expect(result).toEqual(patternOutput);
   });
 });
