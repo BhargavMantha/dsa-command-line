@@ -7,6 +7,7 @@ import * as fs from 'fs';
 import { Pattern1 } from './class/2-patter-1.class';
 import { Pattern2 } from './class/3-patter-2.class';
 import { Pattern3 } from './class/4-patter-3.class';
+import { Pattern4 } from './class/5-patter-4.class';
 const data = {
   inputData: 6
 };
@@ -74,7 +75,7 @@ describe('test, curious-case-of-benjamin-bulbs', () => {
   });
 });
 
-describe('test, curious-case-of-benjamin-bulbs', () => {
+describe('test, Patterns', () => {
   let service: ArraysService;
   let mainMenuService: MainMenuService;
   beforeEach(async () => {
@@ -121,8 +122,8 @@ describe('test, curious-case-of-benjamin-bulbs', () => {
   });
 
   it('check against Pattern-2', () => {
-    const pattern1 = new Pattern2();
-    pattern1.returnPattern2(parseInt('5'));
+    const pattern2 = new Pattern2();
+    pattern2.returnPattern2(parseInt('5'));
     const patternOutput = fs.readFileSync(
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-2.txt',
       'utf8'
@@ -134,8 +135,8 @@ describe('test, curious-case-of-benjamin-bulbs', () => {
     expect(result).toEqual(patternOutput);
   });
   it('check against Pattern-3', () => {
-    const pattern1 = new Pattern3();
-    pattern1.returnPattern3(parseInt('5'));
+    const pattern3 = new Pattern3();
+    pattern3.returnPattern3(parseInt('5'));
     const patternOutput = fs.readFileSync(
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-3.txt',
       'utf8'
@@ -144,6 +145,19 @@ describe('test, curious-case-of-benjamin-bulbs', () => {
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-3.txt',
       'utf8'
     );
-    expect(result).toEqual(patternOutput);
+    expect(result.trim()).toEqual(patternOutput.trim());
+  });
+  it('check against Pattern-4', () => {
+    const pattern4 = new Pattern4();
+    pattern4.returnPattern4(parseInt('5'));
+    const patternOutput = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-4.txt',
+      'utf8'
+    );
+    const result = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-4.txt',
+      'utf8'
+    );
+    expect(result.trim()).toEqual(patternOutput.trim());
   });
 });
