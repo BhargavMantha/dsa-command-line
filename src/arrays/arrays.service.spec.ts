@@ -9,6 +9,7 @@ import { Pattern2 } from './class/3-patter-2.class';
 import { Pattern3 } from './class/4-patter-3.class';
 import { Pattern4 } from './class/5-patter-4.class';
 import { Pattern5 } from './class/6-patter-5.class';
+import { Pattern6 } from './class/7-patter-6.class';
 const data = {
   inputData: 6
 };
@@ -147,6 +148,22 @@ describe('test, Patterns-5', () => {
     );
     const result = fs.readFileSync(
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-5.txt',
+      'utf8'
+    );
+    expect(result).toEqual(patternOutput);
+  });
+});
+
+describe('test, Patterns-6', () => {
+  it('check against Pattern-6', () => {
+    const pattern6 = new Pattern6();
+    pattern6.returnPattern6(parseInt('7'));
+    const patternOutput = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-6.txt',
+      'utf8'
+    );
+    const result = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-6.txt',
       'utf8'
     );
     expect(result).toEqual(patternOutput);
