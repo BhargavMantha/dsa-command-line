@@ -41,7 +41,6 @@ export class Pattern3 {
       }
       pattern = `${pattern}\n`;
     }
-    console.log(pattern);
     fs.writeFileSync(
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-3.txt',
       pattern
