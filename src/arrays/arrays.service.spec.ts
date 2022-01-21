@@ -3,8 +3,10 @@ import { MainMenuService } from '../main-menu/main-menu.service';
 import { keys } from '../main-menu/main-menu.service.spec';
 import { ArraysService } from './arrays.service';
 import { CuriousCaseOfBenjaminBulbs } from './class/1-curious-case-of-benjamin-bulbs.class';
-import { Pattern1 } from './class/2-patter-1.class';
 import * as fs from 'fs';
+import { Pattern1 } from './class/2-patter-1.class';
+import { Pattern2 } from './class/3-patter-2.class';
+import { Pattern3 } from './class/4-patter-3.class';
 const data = {
   inputData: 6
 };
@@ -113,6 +115,33 @@ describe('test, curious-case-of-benjamin-bulbs', () => {
     );
     const result = fs.readFileSync(
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-1.txt',
+      'utf8'
+    );
+    expect(result).toEqual(patternOutput);
+  });
+
+  it('check against Pattern-2', () => {
+    const pattern1 = new Pattern2();
+    pattern1.returnPattern2(parseInt('5'));
+    const patternOutput = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-2.txt',
+      'utf8'
+    );
+    const result = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-2.txt',
+      'utf8'
+    );
+    expect(result).toEqual(patternOutput);
+  });
+  it('check against Pattern-3', () => {
+    const pattern1 = new Pattern3();
+    pattern1.returnPattern3(parseInt('5'));
+    const patternOutput = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-3.txt',
+      'utf8'
+    );
+    const result = fs.readFileSync(
+      '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/program-output-pattern-3.txt',
       'utf8'
     );
     expect(result).toEqual(patternOutput);
