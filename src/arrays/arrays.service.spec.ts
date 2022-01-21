@@ -157,7 +157,7 @@ describe('test, Patterns-5', () => {
 describe('test, Patterns-6', () => {
   it('check against Pattern-6', () => {
     const pattern6 = new Pattern6();
-    pattern6.returnPattern6(parseInt('7'));
+    pattern6.returnPattern6(parseInt('5'));
     const patternOutput = fs.readFileSync(
       '/run/media/bhargav/Personal/dsa/src/arrays/output-patterns/pattern-6.txt',
       'utf8'
