@@ -19,14 +19,13 @@ export class Stack {
       throw 'Stack UnderFlow';
     } else {
       const item = JSON.parse(JSON.stringify(this.stackArr[this.top]));
-      console.log(item);
       this.stackArr[this.top] = null;
       this.top -= 1;
       return item;
     }
   }
   isEmpty() {
-    if (this.top < 1) return true;
+    if (this.top < 0) return true;
     else return false;
   }
   getFreeCount() {
