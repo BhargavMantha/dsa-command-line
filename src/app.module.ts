@@ -6,6 +6,7 @@ import { ArraysModule } from './arrays/arrays.module';
 import { QueueModule } from './queue/queue.module';
 import { TreeModule } from './tree/tree.module';
 import { BinaryTreeModule } from './binart-tree/binary-tree.module';
+import { StackModule } from './stack/stack.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { BinaryTreeModule } from './binart-tree/binary-tree.module';
     ArraysModule,
     QueueModule,
     TreeModule,
-    BinaryTreeModule
+    BinaryTreeModule,
+    StackModule
   ]
 })
 export class AppModule {}
