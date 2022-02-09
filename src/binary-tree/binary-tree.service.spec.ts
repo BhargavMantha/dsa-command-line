@@ -20,24 +20,53 @@ describe('BinaryTreeService', () => {
   });
 });
 
-describe('BinaryTree Impl', () => {
+describe('BinarySearchTree Impl', () => {
   it('should give the right Data', () => {
     const binaryTree = new BinarySearchTree();
-    binaryTree.add(14);
-    binaryTree.add(24);
+    binaryTree.add(10);
+    binaryTree.add(8);
+    binaryTree.add(12);
+    binaryTree.add(4);
     binaryTree.add(9);
-    binaryTree.add(6);
-    binaryTree.add(21);
-    expect(binaryTree.root.data).toBe(14);
-    expect(binaryTree.root.left.data).toBe(9);
-    expect(binaryTree.root.right.data).toBe(24);
-    expect(binaryTree.root.left.left.data).toBe(6);
-    expect(binaryTree.root.right.right).toBe(null);
-    binaryTree.remove(6);
-    JSON.stringify(binaryTree, null, 2);
-    expect(binaryTree.root.left.left).toBe(null);
+    binaryTree.add(11);
+    binaryTree.add(13);
+    expect(binaryTree.root.data).toBe(10);
+    expect(binaryTree.root.left.data).toBe(8);
+    expect(binaryTree.root.right.data).toBe(12);
+    expect(binaryTree.root.left.left.data).toBe(4);
+    expect(binaryTree.root.left.right.data).toBe(9);
+    expect(binaryTree.root.right.left.data).toBe(11);
+    expect(binaryTree.root.right.right.data).toBe(13);
   });
-
+});
+describe('BinarySearch Impl find node', () => {
+  it('should give the right Data 1', () => {
+    const binarySearchTree = new BinarySearchTree();
+    binarySearchTree.add(10);
+    binarySearchTree.add(8);
+    binarySearchTree.add(12);
+    binarySearchTree.add(4);
+    binarySearchTree.add(9);
+    binarySearchTree.add(11);
+    binarySearchTree.add(13);
+    const findResult = binarySearchTree.find(12);
+    expect(findResult.left.data).toBe(11);
+    expect(findResult.right.data).toBe(13);
+  });
+  it('should give the right Data 2', () => {
+    const binarySearchTree = new BinarySearchTree();
+    binarySearchTree.add(10);
+    binarySearchTree.add(8);
+    binarySearchTree.add(12);
+    binarySearchTree.add(4);
+    binarySearchTree.add(9);
+    const findResult = binarySearchTree.find(9);
+    expect(findResult.left).toBe(null);
+    expect(findResult.right).toBe(null);
+    expect(findResult.data).toBe(9);
+  });
+});
+describe('test BinaryTree Impl', () => {
   it('Test in order traversal', () => {
     const binaryTree = new BinaryTree(1);
     const node2 = new Node(2);
