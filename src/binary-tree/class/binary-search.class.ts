@@ -20,6 +20,23 @@ export class BinarySearchTree {
       else this.addHelper(node.right, newNode);
     }
   }
+  find(data: any, node = this.root) {
+    if (node === null || node.data === data) {
+      return node;
+    } else if (data < node.data) {
+      return this.find(data, node.left);
+    } else if (data > node.data) {
+      return this.find(data, node.right);
+    }
+  }
+  findMinNode(node: Node) {
+    if (node.left === null) return node;
+    else return this.findMinNode(node.left);
+  }
+  findMaxNode(node: Node) {
+    if (node.right === null) return node;
+    else return this.findMinNode(node.right);
+  }
   remove(data: any) {
     this.root = this.removeHelper(this.root, data);
   }
@@ -45,9 +62,5 @@ export class BinarySearchTree {
     node.data = minNode.data;
     node.right = this.removeHelper(node.right, minNode.data);
     return node;
-  }
-  findMinNode(node: Node) {
-    if (node.left === null) return node;
-    else return this.findMinNode(node.left);
   }
 }
