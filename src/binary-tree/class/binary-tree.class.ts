@@ -7,8 +7,18 @@ export class BinaryTree {
   preOrderTraversalResult: any[] = null;
   postOrderTraversalResult: any[] = null;
   inOrderTraversalResult: any[] = null;
+  leafNodes = null;
+  nonLeafNodes = null;
+  height: number;
+
   constructor(data: any) {
     this.root = new Node(data);
+    this.postOrderTraversalResult = [];
+    this.preOrderTraversalResult = [];
+    this.inOrderTraversalResult = [];
+    this.leafNodes = [];
+    this.nonLeafNodes = [];
+    this.height = 0;
   }
   iterativeTraversalForInOrder(numberOFNodesInTree: number) {
     const traversedResult = [];
@@ -31,11 +41,7 @@ export class BinaryTree {
     if (node === null) {
       return null;
     }
-    if (node === this.root) {
-      this.postOrderTraversalResult = [];
-      this.preOrderTraversalResult = [];
-      this.inOrderTraversalResult = [];
-    }
+
     if (traversalType === 'pre') this.preOrderTraversalResult.push(node.data);
     this.traversal(traversalType, node.left);
     if (traversalType === 'in') this.inOrderTraversalResult.push(node.data);
@@ -50,5 +56,55 @@ export class BinaryTree {
   }
   getInOrderTraversalResult() {
     return this.inOrderTraversalResult.join(',');
+  }
+
+  mirrorOfBinaryTree(node = this.root) {
+    if (node === null) {
+      return;
+    }
+    const temp = node.right;
+    node.right = node.left;
+    node.left = temp;
+    this.mirrorOfBinaryTree(node.left);
+    this.mirrorOfBinaryTree(node.right);
+  }
+  countLeafNodes(node = this.root) {
+    if (node === null) {
+      return null;
+    }
+    const leftNode = this.countLeafNodes(node.left);
+    const rightNode = this.countLeafNodes(node.right);
+    if (rightNode === null && leftNode === null) {
+      this.leafNodes.push(node.data);
+    }
+  }
+  getCountLeafNodeResult() {
+    return { count: this.leafNodes.length, leafNodes: this.leafNodes };
+  }
+
+  countNonLeafNodes(node = this.root) {
+    if (node === null) {
+      return null;
+    }
+    const leftNode = this.countNonLeafNodes(node.left);
+    const rightNode = this.countNonLeafNodes(node.right);
+    if (leftNode !== null || rightNode !== null) {
+      this.nonLeafNodes.push(node.data);
+    }
+  }
+  getCountNonLeafNodeResult() {
+    return { count: this.nonLeafNodes.length, leafNodes: this.nonLeafNodes };
+  }
+  heightOfABinaryTree(node = this.root) {
+    if (node === null) {
+      return 0;
+    }
+    let leftNodeHeight = this.heightOfABinaryTree(node.left);
+    let rightNodeHeight = this.heightOfABinaryTree(node.right);
+    if (leftNodeHeight > rightNodeHeight) {
+      return leftNodeHeight + 1;
+    } else {
+      return rightNodeHeight + 1;
+    }
   }
 }
