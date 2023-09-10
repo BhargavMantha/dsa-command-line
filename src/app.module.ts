@@ -5,7 +5,7 @@ import { LinkedListModule } from './linked-list/linked-list.module';
 import { ArraysModule } from './arrays/arrays.module';
 import { QueueModule } from './queue/queue.module';
 import { TreeModule } from './tree/tree.module';
-import { BinaryTreeModule } from './binart-tree/binary-tree.module';
+import { BinaryTreeModule } from './binary-tree/binary-tree.module';
 import { StackModule } from './stack/stack.module';
 
 @Module({
